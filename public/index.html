@@ -49,6 +49,7 @@
           </dl>
         </div>
       </div>
+    <button class='wolf-alice-button'>Click me!</button>
     </script>
 
     <script id="oauth-template" type="text/x-handlebars-template">
@@ -60,7 +61,7 @@
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
       (function() {
         /**
@@ -106,11 +107,25 @@
                   $('#loggedin').show();
                 }
             });
+
+
+            //random Wolf Alice request. button won't load, but it works in here with no handlers... >:(
+              $.ajax({
+                url: 'https://api.spotify.com/v1/artists/3btzEQD6sugImIHPMRgkwV',
+                headers: {'Authorization': 'Bearer ' + access_token},
+                success: function(data) {
+                  console.log('success')
+                  console.log(data)},
+                dataType: 'json'
+              })
+
+
           } else {
               // render initial screen
               $('#login').show();
               $('#loggedin').hide();
           }
+
           document.getElementById('obtain-new-token').addEventListener('click', function() {
             $.ajax({
               url: '/refresh_token',
@@ -125,8 +140,11 @@
               });
             });
           }, false);
+
+
         }
       })();
+
     </script>
   </body>
 </html>
