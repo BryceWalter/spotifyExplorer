@@ -6,7 +6,9 @@
 
 Register an application on Spotify Developer website
 Under My Applications, get Client Key and Secret Key, and add these to a .env file as variables clientID and clientSecret
-In My Applications, under Redirect URIs, add the URI http://localhost:8080/callback/
+
+
+# In My Applications, under Redirect URIs, add the URI http://localhost:8080/callback/
 Scroll to the bottom and save your Application settings
 
 In app:
