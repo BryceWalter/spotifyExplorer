@@ -5,7 +5,7 @@
 ## Usage
 
 Register an application on Spotify Developer website
-Under My Applications, get Client Key and Secret Key, and add these to a .env file as variables clientID and clientSecret
+Under My Applications, get Client Key and Secret Key, and add these to a .env file as variables clientID and clientSecret.
 
 
 # In My Applications, under Redirect URIs, add the URI http://localhost:8080/callback/
